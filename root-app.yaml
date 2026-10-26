@@ -9,13 +9,13 @@ spec:
   project: default
   source:
     repoURL: https://github.com/prajwalS0209/argocdPractice.git
-    targetRevision: main
+    targetRevision: multi-cluster
     path: apps
     directory:
       recurse: true
   destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
+    server: https://95.217.112.231:6443 
+    namespace: superset
   syncPolicy:
     automated:
       prune: true
