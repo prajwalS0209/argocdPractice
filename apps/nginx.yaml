@@ -12,5 +12,5 @@ spec:
     directory:
       include: nginx-deploy.yaml
   destination:
-    server: https://kubernetes.default.svc
+    server: https://95.217.112.231:6443 
     namespace: argocd
