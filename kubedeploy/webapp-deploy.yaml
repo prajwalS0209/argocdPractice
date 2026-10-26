@@ -38,6 +38,6 @@ spec:
   - name: webapp-deploy-svc
     protocol: TCP
     port: 80
-    targetPort: 800
+    targetPort: 8080
     
 
