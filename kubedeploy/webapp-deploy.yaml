@@ -19,8 +19,8 @@ spec:
         app: webapp-deploy
     spec:
       containers:
-      - image: webapp
-        name: jeetkansagra07/ultimate-cicd:15803f5
+      - image: jeetkansagra07/ultimate-cicd:15803f5
+        name: webapp
         ports:
         - containerPort: 80
           name: http
