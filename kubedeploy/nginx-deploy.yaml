@@ -38,5 +38,5 @@ spec:
   - name: nginx-deploy-svc
     protocol: TCP
     port: 80
-    targetPort: http
+    targetPort: 80
 
