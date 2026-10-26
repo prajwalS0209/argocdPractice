@@ -13,4 +13,4 @@ spec:
       include: nginx-deploy.yaml
   destination:
     server: https://95.217.112.231:6443 
-    namespace: argocd
+    namespace: superset
