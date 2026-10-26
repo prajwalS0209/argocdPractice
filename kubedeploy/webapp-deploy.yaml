@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - image: webapp
-        name: jeetkansagra07/go-web-app:16513899341
+        name: jeetkansagra07/ultimate-cicd:15803f5
         ports:
         - containerPort: 80
           name: http
