@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webapp-deploy
+  name: webapp-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webapp-deploy
+    spec:
+      containers:
+      - image: webapp
+        name: jeetkansagra07/go-web-app:16513899341
+        ports:
+        - containerPort: 80
+          name: http
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  type: NodePort
+  selector:
+    app: webapp-deploy
+  ports:
+  - name: webapp-deploy-svc
+    protocol: TCP
+    port: 80
+    targetPort: http
+
