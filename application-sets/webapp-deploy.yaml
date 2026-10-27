@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: incluster-application-set
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - list:
+      elements:
+      - cluster: incluster
+        url: https://kubernetes.default.svc
+        namespace: superset
+        branch: applicationset
+  template:
+    metadata:
+      name: '{{.cluster}}-webapp-deploy'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/prajwalS0209/argocdPractice.git
+        targetRevision: '{{.branch}}'
+        path: kubedeploy/webapp-deploy.yaml
+      destination:
+        server: '{{.url}}'
+        namespace: '{{.namespace}}'
