@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: https://github.com/prajwalS0209/argocdPractice.git
         targetRevision: '{{.branch}}'
-        path: kubedeploy/nginx-deploy.yaml
+        path: kubedeploy/nginx
       destination:
         server: '{{.url}}'
         namespace: '{{.namespace}}'
